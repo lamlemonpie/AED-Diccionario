@@ -2,7 +2,7 @@
 #define QUEUE_H
 
 
-#include "nodo.h"
+#include "node_simple.h"
 #include <iostream>
 
 using namespace std;
@@ -11,8 +11,8 @@ template <class T>
 class Cola
 {
 public:
-    Nodo<T> * m_phead;
-    Nodo<T> * m_plast;
+    Node_Simple<T> * m_phead;
+    Node_Simple<T> * m_plast;
 public:
     Cola()
     {
@@ -30,7 +30,7 @@ public:
 template <class T>
 void Cola<T>::Print()
 {
-    Nodo<T> *AUX = m_phead;
+    Node_Simple<T> *AUX = m_phead;
     while(AUX!=0)
     {
         cout <<  AUX -> m_dato;
@@ -46,7 +46,7 @@ void Cola<T>::Print()
 template <class T>
 void Cola<T>::Encolar(T d)
 {
-    Nodo<T> * Nuevo =new Nodo<T>(d);
+    Node_Simple<T> * Nuevo =new Node_Simple<T>(d);
     if(m_phead!=0)
         m_plast->m_psig = Nuevo;
     else
@@ -61,7 +61,7 @@ T Cola<T>::Desencolar()
 {
     if(m_phead!=0)
     {
-        Nodo<T> * tmp = m_phead;
+        Node_Simple<T> * tmp = m_phead;
         m_phead = m_phead -> m_psig;
         T valor = tmp -> m_dato;
         delete tmp;

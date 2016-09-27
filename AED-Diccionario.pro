@@ -20,6 +20,8 @@ HEADERS  += mainwindow.h \
     stack.h \
     nodo.h \
     queue.h \
-    node_simple.h
+    node_simple.h \
+    avl_tree.h \
+    red_black_tree.h
 
 FORMS    += mainwindow.ui

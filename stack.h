@@ -3,7 +3,7 @@
 
 
 #include <iostream>
-#include "nodo.h"
+#include "node_simple.h"
 
 using namespace std;
 
@@ -12,7 +12,7 @@ template <class T>
 class Pila
 {
 public:
-    Nodo<T> * m_ptope;
+    Node_Simple<T> * m_ptope;
 public:
     Pila()
     {
@@ -31,7 +31,7 @@ template <class T>
 void Pila<T>::Print()
 {
 
-    Nodo<T> *AUX = m_ptope;
+    Node_Simple<T> *AUX = m_ptope;
     while(AUX!=0)
     {
         cout <<  AUX -> m_dato;
@@ -47,7 +47,7 @@ void Pila<T>::Print()
 template <class T>
 void Pila<T>::Push(T d)
 {
-    Nodo<T> *Nuevo = new Nodo<T>(d);
+    Node_Simple<T> *Nuevo = new Node_Simple<T>(d);
     if(m_ptope==0)
     {
         m_ptope = Nuevo;
@@ -66,7 +66,7 @@ T Pila<T>::Pop()
 {
     if(m_ptope != 0)
     {
-        Nodo<T> *tmp = m_ptope;
+        Node_Simple<T> *tmp = m_ptope;
         m_ptope = m_ptope -> m_psig;
         T valor = tmp -> m_dato;
         delete tmp;
